@@ -118,7 +118,10 @@
   <xacro:macro name="gazebo-joint" params="joint transmission:=hardware_interface/EffortJointInterface">
     <gazebo reference="${joint}">
       <!-- Needed for ODE to output external wrenches on joints -->
-      <provideFeedback>true</provideFeedback>
+      <!-- <provideFeedback>true</provideFeedback> -->
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <!-- <gravity>0</gravity> -->
     </gazebo>
 
     <transmission name="${joint}_transmission">
@@ -128,6 +131,7 @@
       </joint>
       <actuator name="${joint}_motor">
         <hardwareInterface>${transmission}</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
   </xacro:macro>

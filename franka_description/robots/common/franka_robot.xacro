@@ -43,7 +43,7 @@
         <child  link="$(arg arm_id)_link0" />
       </joint>
 
-      <xacro:gazebo-joint joint="${arm_id}_joint1" transmission="hardware_interface/PositionJointInterface" />
+      <!-- <xacro:gazebo-joint joint="${arm_id}_joint1" transmission="hardware_interface/PositionJointInterface" />
       <xacro:gazebo-joint joint="${arm_id}_joint2" transmission="hardware_interface/PositionJointInterface" />
       <xacro:gazebo-joint joint="${arm_id}_joint3" transmission="hardware_interface/PositionJointInterface" />
       <xacro:gazebo-joint joint="${arm_id}_joint4" transmission="hardware_interface/PositionJointInterface" />
@@ -57,7 +57,7 @@
       <xacro:gazebo-joint joint="${arm_id}_joint4" transmission="hardware_interface/VelocityJointInterface" />
       <xacro:gazebo-joint joint="${arm_id}_joint5" transmission="hardware_interface/VelocityJointInterface" />
       <xacro:gazebo-joint joint="${arm_id}_joint6" transmission="hardware_interface/VelocityJointInterface" />
-      <xacro:gazebo-joint joint="${arm_id}_joint7" transmission="hardware_interface/VelocityJointInterface" />
+      <xacro:gazebo-joint joint="${arm_id}_joint7" transmission="hardware_interface/VelocityJointInterface" /> -->
 
       <xacro:gazebo-joint joint="${arm_id}_joint1" transmission="hardware_interface/EffortJointInterface" />
       <xacro:gazebo-joint joint="${arm_id}_joint2" transmission="hardware_interface/EffortJointInterface" />
@@ -67,11 +67,11 @@
       <xacro:gazebo-joint joint="${arm_id}_joint6" transmission="hardware_interface/EffortJointInterface" />
       <xacro:gazebo-joint joint="${arm_id}_joint7" transmission="hardware_interface/EffortJointInterface" />
 
-      <xacro:transmission-franka-state arm_id="${arm_id}" />
+      <!-- <xacro:transmission-franka-state arm_id="${arm_id}" />
       <xacro:transmission-franka-model arm_id="${arm_id}"
          root="${arm_id}_joint1"
          tip="${arm_id}_joint8"
-       />
+       /> -->
 
       <xacro:if value="$(arg hand)">
         <xacro:gazebo-joint joint="${arm_id}_finger_joint1" transmission="hardware_interface/EffortJointInterface" />
@@ -83,10 +83,10 @@
 
       <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-          <controlPeriod>0.001</controlPeriod>
-          <robotSimType>franka_gazebo/FrankaHWSim</robotSimType>
+          <!-- <controlPeriod>0.001</controlPeriod>
+          <robotSimType>franka_gazebo/FrankaHWSim</robotSimType> -->
         </plugin>
-        <self_collide>true</self_collide>
+        <!-- <self_collide>true</self_collide> -->
       </gazebo>
     </xacro:if>
   </xacro:macro>
